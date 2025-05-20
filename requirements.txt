@@ -2,3 +2,4 @@ livekit
 livekit-agents
 livekit-plugins-google
 python-dotenv
+livekit-plugins-noise-cancellation

@@ -30,8 +30,7 @@ async def entrypoint(ctx: agents.JobContext):
 
     await session.start(
                                                                                                                                                                 room=ctx.room,
-                                                                                                                                                                            agent=Assistant(),
-    )
+                                                                                                                                                                            agent=Assistant(),)
                                                                                                                                                                                                                                                                                                                                                                                                                                                      ) 
     await session.generate_reply(
                                                                                                                                                                                                                                                                                                 instructions="Greet the user and offer your assistance."

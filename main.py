@@ -18,7 +18,7 @@ class Assistant(Agent):
 
 
 async def entrypoint(ctx: agents.JobContext):
-    #await ctx.connect()
+    await ctx.connect()
 
     session = AgentSession(
                                                                 llm=google.beta.realtime.RealtimeModel(
@@ -32,7 +32,7 @@ async def entrypoint(ctx: agents.JobContext):
                                                                                                                                                                 room=ctx.room,
                                                                                                                                                                             agent=Assistant(),
     )
-    await ctx.connect()
+ #   await ctx.connect()
     await session.generate_reply(
                                  instructions="Greet the user and offer your assistance."
     )

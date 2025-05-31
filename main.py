@@ -4,7 +4,7 @@ from livekit import agents
 from livekit.agents import AgentSession, Agent, RoomInputOptions
 from livekit.plugins import google
 #from livekit.plugins.turn_detector.multilingual import MultilingualModel # Corrected indentation
-from livekit.plugins import noise_cancellation 
+#from livekit.plugins import noise_cancellation 
 load_dotenv()
 
 
@@ -31,12 +31,12 @@ async def entrypoint(ctx: agents.JobContext):
     await session.start(
                                                                                                                                                                 room=ctx.room,
                                                                                                                                                                             agent=Assistant(),
-                         room_input_options=RoomInputOptions(
+                #         room_input_options=RoomInputOptions(
             # LiveKit Cloud enhanced noise cancellation
             # - If self-hosting, omit this parameter
             # - For telephony applications, use `BVCTelephony` for best results
-            noise_cancellation=noise_cancellation.BVC(), 
-        ),
+         #   noise_cancellation=noise_cancellation.BVC(), 
+      #  ),
     )
  #   await ctx.connect()
     await session.generate_reply(

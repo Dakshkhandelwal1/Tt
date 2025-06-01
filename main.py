@@ -78,12 +78,9 @@ async def c2s() -> None:
         # Perform a handoff, immediately transfering control to the new agent
     return mukeshji()
 @function_tool()
-async def c2m() -> None:
-    """Use this tool to handoff the call to shrikantji."""
+async def c2m(ctx: agents.JobContext):
+    await ctx.connect()
 
-        # Perform a handoff, immediately transfering control to the new agent
-    agents.JobContext.connect()
-        #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
     session = AgentSession(
                                                                 llm=google.beta.realtime.RealtimeModel(
                                                                                 model="gemini-2.0-flash-exp",
@@ -91,8 +88,9 @@ async def c2m() -> None:
                                                                                                                 temperature=0.8,
                                                                                                                                 instructions="You are a helpful assistant"
                                                                                                                                             ))
-    session.start(
-                                                                                                                                                                room=agents.JobContext.room,
+
+    await session.start(
+                                                                                                                                                                room=ctx.room,
                                                                                                                                                                             agent=shrikantji(),
                 #         room_input_options=RoomInputOptions(
             # LiveKit Cloud enhanced noise cancellation
@@ -102,9 +100,11 @@ async def c2m() -> None:
       #  ),
     )
  #   await ctx.connect()
-    session.generate_reply(
+    await session.generate_reply(
                                  instructions="Greet the user and offer your assistance."
     )
+
+    agents.cli.run_app(agents.WorkerOptions(entrypoint_fnc=c2m)) 
 
 @function_tool()
 async def c2ss() -> None:

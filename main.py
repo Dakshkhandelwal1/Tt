@@ -135,7 +135,7 @@ class hod(Agent):
         """called when user want to connect with mathematics teacher ."""
 
         # Perform a handoff, immediately transfering control to the new agent
-        return shrikantji(chat_ctx=self.session.chat_ctx)
+        return shrikantji(chat_ctx=self.session._chat_ctx)
 
 
 async def entrypoint(ctx: agents.JobContext):

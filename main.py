@@ -144,7 +144,7 @@ c2cs – Connect to Computer Science teacher
 c2e – Connect to English teacher
 
 c2h – Connect to Hindi teacher""",
-        tools = [c2s,c2m,c2ss,c2sst,c2cs,c2e,c2h],
+        tools = [c2s,c2m,c2ss,c2sst,c2cs,c2e,c2h]
                         )
 
 

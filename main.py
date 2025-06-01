@@ -137,7 +137,6 @@ Kindly greet the student warmly, then ask them which subject teacher they would 
 
 c2s – Connect to Science teacher
 
-c2m – Connect to Mathematics teacher
 
 c2ss – Connect to Sanskrit teacher
 
@@ -148,11 +147,11 @@ c2cs – Connect to Computer Science teacher
 c2e – Connect to English teacher
 
 c2h – Connect to Hindi teacher""",
-        tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
+        #tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
                         )
         @function_tool()
         async def c2m() -> None:
-            """Use this tool to handoff the call to shrikantji."""
+            """called when user want to connect with mathematics teacher ."""
 
         # Perform a handoff, immediately transfering control to the new agent
             return shrikantji(chat_ctx=self.session.chat_ctx)

@@ -78,12 +78,12 @@ async def c2s() -> None:
 
         # Perform a handoff, immediately transfering control to the new agent
     return mukeshji()
-@function_tool()
+'''@function_tool()
 async def c2m() -> None:
     """Use this tool to handoff the call to shrikantji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return shrikantji()
+    return shrikantji()'''
 
 @function_tool()
 async def c2ss() -> None:

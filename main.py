@@ -130,12 +130,12 @@ class hod(Agent):
 🎓 Your only responsibility is to welcome the student and connect them to Mathematics teacher using c2m function tool """,
         #tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
                         )
-        @function_tool()
-        async def c2m() -> None:
-            """called when user want to connect with mathematics teacher ."""
+    @function_tool()
+    async def c2m() -> None:
+    """called when user want to connect with mathematics teacher ."""
 
         # Perform a handoff, immediately transfering control to the new agent
-            return shrikantji(chat_ctx=self.session.chat_ctx)
+    return shrikantji(chat_ctx=self.session.chat_ctx)
 
 
 async def entrypoint(ctx: agents.JobContext):

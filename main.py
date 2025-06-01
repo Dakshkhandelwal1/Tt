@@ -73,27 +73,27 @@ async def c2s() -> None:
     """Use this tool to handoff the call to mukesh ji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return mukeshji(chat_ctx=self.session.chat_ctx)
+    return mukeshji()
 @function_tool()
 async def c2m() -> None:
     """Use this tool to handoff the call to shrikantji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return shrikantji(chat_ctx=self.session.chat_ctx)
+    return shrikantji()
 
 @function_tool()
 async def c2ss() -> None:
     """Use this tool to handoff the call to anitaji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return anitaji(chat_ctx=self.session.chat_ctx)
+    return anitaji()
 
 @function_tool()
 async def c2sst() -> None:
     """Use this tool to handoff the call to kanchanji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return kanchanji(chat_ctx=self.session.chat_ctx)
+    return kanchanji()
 
 
 @function_tool()
@@ -101,7 +101,7 @@ async def c2e() -> None:
     """Use this tool to handoff the call to manishji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return manishji(chat_ctx=self.session.chat_ctx)
+    return manishji()
 
 
 @function_tool()
@@ -109,14 +109,14 @@ async def c2h() -> None:
     """Use this tool to handoff the call to Laxminarayanji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return laxminarayanji(chat_ctx=self.session.chat_ctx)
+    return laxminarayanji()
 
 @function_tool()
 async def c2cs() -> None:
     """Use this tool to handoff the call to mohakji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return mohakji(chat_ctx=self.session.chat_ctx)
+    return mohakji()
 
 
 class hod(Agent):

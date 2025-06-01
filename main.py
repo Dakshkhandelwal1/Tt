@@ -24,29 +24,7 @@ class shrikantji(Agent):
         Your primary goal is to teach mathematics according to the Class 10 RBSE syllabus in an interactive, engaging, and student-friendly manner. Break down complex concepts into simple explanations using relatable examples. Frequently involve the student by asking questions mid-lesson to check understanding and encourage participation.
         
         Maintain a warm, encouraging, and clear tone throughout the session. Emphasize conceptual clarity and step-by-step problem solving. Use the teaching style of a real classroom teacher who interacts actively with students.after connectingwith a student compulsarily greet him and ask him about what he want to study in mathematics""")
-        agents.JobContext.connect(self)
-        #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
-    session = AgentSession(
-                                                                llm=google.beta.realtime.RealtimeModel(
-                                                                                model="gemini-2.0-flash-exp",
-                                                                                                voice="Puck",
-                                                                                                                temperature=0.8,
-                                                                                                                                instructions="You are a helpful assistant"
-                                                                                                                                            ))
-    session.start(
-                                                                                                                                                                room=agents.JobContext.room,
-                                                                                                                                                                            agent=shrikantji(),
-                #         room_input_options=RoomInputOptions(
-            # LiveKit Cloud enhanced noise cancellation
-            # - If self-hosting, omit this parameter
-            # - For telephony applications, use `BVCTelephony` for best results
-         #   noise_cancellation=noise_cancellation.BVC(), 
-      #  ),
-    )
- #   await ctx.connect()
-    session.generate_reply(
-                                 instructions="Greet the user and offer your assistance."
-    )
+
 class anitaji(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are anita sharma, a dedicated sanskrit teacher living in Tunga, Bassi. You teach Class 10 students at MGGGS Tunga, following the Rajasthan Board of Secondary Education (RBSE) curriculum.
@@ -99,12 +77,34 @@ async def c2s() -> None:
 
         # Perform a handoff, immediately transfering control to the new agent
     return mukeshji()
-'''@function_tool()
+@function_tool()
 async def c2m() -> None:
     """Use this tool to handoff the call to shrikantji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-    return shrikantji()'''
+            agents.JobContext.connect(self)
+        #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
+    session = AgentSession(
+                                                                llm=google.beta.realtime.RealtimeModel(
+                                                                                model="gemini-2.0-flash-exp",
+                                                                                                voice="Puck",
+                                                                                                                temperature=0.8,
+                                                                                                                                instructions="You are a helpful assistant"
+                                                                                                                                            ))
+    session.start(
+                                                                                                                                                                room=agents.JobContext.room,
+                                                                                                                                                                            agent=shrikantji(),
+                #         room_input_options=RoomInputOptions(
+            # LiveKit Cloud enhanced noise cancellation
+            # - If self-hosting, omit this parameter
+            # - For telephony applications, use `BVCTelephony` for best results
+         #   noise_cancellation=noise_cancellation.BVC(), 
+      #  ),
+    )
+ #   await ctx.connect()
+    session.generate_reply(
+                                 instructions="Greet the user and offer your assistance."
+    )
 
 @function_tool()
 async def c2ss() -> None:
@@ -148,15 +148,15 @@ class hod(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are the Head of Department (HOD).
 
-🎓 Your only responsibility is to welcome the student and connect them to Mathematics teacher using c2m function tool """,
-        #tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
+🎓 Your only responsibility is to welcome the student and connect them to Mathematics teacher using c2m tool """,
+        tools = [c2m]
                         )
-    @function_tool()
-    async def c2m(self) -> None:
+    #@function_tool()
+    '''async def c2m(self) -> None:
         """called when user want to connect with mathematics teacher ."""
 
         # Perform a handoff, immediately transfering control to the new agent
-        return shrikantji(chat_ctx=self.session._chat_ctx)
+        return shrikantji(chat_ctx=self.session._chat_ctx)'''
 
 
 async def entrypoint(ctx: agents.JobContext):

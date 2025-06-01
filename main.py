@@ -82,7 +82,7 @@ async def c2m() -> None:
     """Use this tool to handoff the call to shrikantji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-            agents.JobContext.connect(self)
+    agents.JobContext.connect(self)
         #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
     session = AgentSession(
                                                                 llm=google.beta.realtime.RealtimeModel(

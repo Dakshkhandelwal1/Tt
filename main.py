@@ -35,7 +35,7 @@ class shrikantji(Agent):
                                                                                                                                             ))
     session.start(
                                                                                                                                                                 room=agents.JobContext.room,
-                                                                                                                                                                            agent=srikantji(),
+                                                                                                                                                                            agent=shrikantji(),
                 #         room_input_options=RoomInputOptions(
             # LiveKit Cloud enhanced noise cancellation
             # - If self-hosting, omit this parameter

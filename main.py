@@ -34,7 +34,7 @@ class shrikantji(Agent):
                                                                                                                                 instructions="You are a helpful assistant"
                                                                                                                                             ))
     session.start(
-                                                                                                                                                                room=ctx.room,
+                                                                                                                                                                room=agents.JobContext.room,
                                                                                                                                                                             agent=srikantji(),
                 #         room_input_options=RoomInputOptions(
             # LiveKit Cloud enhanced noise cancellation

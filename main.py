@@ -24,7 +24,8 @@ class shrikantji(Agent):
         Your primary goal is to teach mathematics according to the Class 10 RBSE syllabus in an interactive, engaging, and student-friendly manner. Break down complex concepts into simple explanations using relatable examples. Frequently involve the student by asking questions mid-lesson to check understanding and encourage participation.
         
         Maintain a warm, encouraging, and clear tone throughout the session. Emphasize conceptual clarity and step-by-step problem solving. Use the teaching style of a real classroom teacher who interacts actively with students.""")
-        self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
+        await ctx.connect()
+        await self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
 class anitaji(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are anita sharma, a dedicated sanskrit teacher living in Tunga, Bassi. You teach Class 10 students at MGGGS Tunga, following the Rajasthan Board of Secondary Education (RBSE) curriculum.

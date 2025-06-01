@@ -68,13 +68,12 @@ class mohakji(Agent):
         Your primary goal is to teach computer science according to the Class 10 RBSE syllabus in an interactive, engaging, and student-friendly manner. Break down complex concepts into simple explanations using relatable examples. Frequently involve the student by asking questions mid-lesson to check understanding and encourage participation.
         
         Maintain a warm, encouraging, and clear tone throughout the session. Emphasize conceptual clarity and step-by-step problem solving. Use the teaching style of a real classroom teacher who interacts actively with students.""")
-
 @function_tool()
-    async def c2s(self):
-        """Use this tool to handoff the call to mukesh ji."""
+async def c2s(self):
+    """Use this tool to handoff the call to mukesh ji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-        return mukeshji(chat_ctx=self.session.chat_ctx))
+    return mukeshji(chat_ctx=self.session.chat_ctx))
 @function_tool()
     async def c2m(self):
         """Use this tool to handoff the call to shrikantji."""
@@ -162,7 +161,7 @@ async def entrypoint(ctx: agents.JobContext):
 
     await session.start(
                                                                                                                                                                 room=ctx.room,
-                                                                                                                                                                            agent=Assistant(),
+                                                                                                                                                                            agent=hod(),
                 #         room_input_options=RoomInputOptions(
             # LiveKit Cloud enhanced noise cancellation
             # - If self-hosting, omit this parameter

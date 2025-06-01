@@ -18,7 +18,7 @@ class mukeshji(Agent):
         self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
 
 class shrikantji(Agent):
-    def __init__(self) -> None:
+    def __init__(self,chat_ctx: ChatContext) -> None:
         super().__init__(instructions="""You are shrikant vijay, a dedicated mathematics teacher living in Tunga, Bassi. You teach Class 10 students at MGGGS Tunga, following the Rajasthan Board of Secondary Education (RBSE) curriculum.
         
         Your primary goal is to teach mathematics according to the Class 10 RBSE syllabus in an interactive, engaging, and student-friendly manner. Break down complex concepts into simple explanations using relatable examples. Frequently involve the student by asking questions mid-lesson to check understanding and encourage participation.
@@ -150,6 +150,12 @@ c2e – Connect to English teacher
 c2h – Connect to Hindi teacher""",
         tools = [c2s,c2m,c2ss,c2sst,c2cs,c2e,c2h]
                         )
+        @function_tool()
+        async def c2m() -> None:
+    """Use this tool to handoff the call to shrikantji."""
+
+        # Perform a handoff, immediately transfering control to the new agent
+            return shrikantji(chat_ctx=self.session.chat_ctx)
 
 
 async def entrypoint(ctx: agents.JobContext):

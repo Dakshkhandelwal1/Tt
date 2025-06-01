@@ -131,7 +131,7 @@ class hod(Agent):
         #tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
                         )
     @function_tool()
-    async def c2m() -> None:
+    async def c2m(self) -> None:
         """called when user want to connect with mathematics teacher ."""
 
         # Perform a handoff, immediately transfering control to the new agent

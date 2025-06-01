@@ -75,11 +75,11 @@ async def c2s(self):
         # Perform a handoff, immediately transfering control to the new agent
     return mukeshji(chat_ctx=self.session.chat_ctx)
 @function_tool()
-    async def c2m(self):
-        """Use this tool to handoff the call to shrikantji."""
+async def c2m(self):
+    """Use this tool to handoff the call to shrikantji."""
 
         # Perform a handoff, immediately transfering control to the new agent
-        return shrikantji(chat_ctx=self.session.chat_ctx))
+    return shrikantji(chat_ctx=self.session.chat_ctx)
 
 @function_tool()
 async def c2ss(self):

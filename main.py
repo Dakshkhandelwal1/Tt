@@ -26,17 +26,14 @@ class shrikantji(Agent):
         Maintain a warm, encouraging, and clear tone throughout the session. Emphasize conceptual clarity and step-by-step problem solving. Use the teaching style of a real classroom teacher who interacts actively with students.after connectingwith a student compulsarily greet him and ask him about what he want to study in mathematics""")
         agents.JobContext.connect(self)
         #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
-     session = AgentSession(
+    session = AgentSession(
                                                                 llm=google.beta.realtime.RealtimeModel(
                                                                                 model="gemini-2.0-flash-exp",
                                                                                                 voice="Puck",
                                                                                                                 temperature=0.8,
                                                                                                                                 instructions="You are a helpful assistant"
                                                                                                                                             ))
-
-
-
-      session.start(
+    session.start(
                                                                                                                                                                 room=ctx.room,
                                                                                                                                                                             agent=srikantji(),
                 #         room_input_options=RoomInputOptions(
@@ -47,7 +44,7 @@ class shrikantji(Agent):
       #  ),
     )
  #   await ctx.connect()
-     session.generate_reply(
+    session.generate_reply(
                                  instructions="Greet the user and offer your assistance."
     )
 class anitaji(Agent):

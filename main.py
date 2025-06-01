@@ -127,26 +127,7 @@ class hod(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are the Head of Department (HOD).
 
-🎓 Your only responsibility is to welcome the student and guide them to connect with the appropriate subject teacher.
-
-Kindly greet the student warmly, then ask them which subject teacher they would like to connect with.
-
-✅ Use the following tools/commands to help the student connect:
-
-🛠️ Connection Commands:
-
-c2s – Connect to Science teacher
-
-
-c2ss – Connect to Sanskrit teacher
-
-c2sst – Connect to Social Science teacher
-
-c2cs – Connect to Computer Science teacher
-
-c2e – Connect to English teacher
-
-c2h – Connect to Hindi teacher""",
+🎓 Your only responsibility is to welcome the student and connect them to Mathematics teacher using c2m function tool """,
         #tools = [c2s,c2ss,c2sst,c2cs,c2e,c2h]
                         )
         @function_tool()

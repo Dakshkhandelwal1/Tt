@@ -24,8 +24,32 @@ class shrikantji(Agent):
         Your primary goal is to teach mathematics according to the Class 10 RBSE syllabus in an interactive, engaging, and student-friendly manner. Break down complex concepts into simple explanations using relatable examples. Frequently involve the student by asking questions mid-lesson to check understanding and encourage participation.
         
         Maintain a warm, encouraging, and clear tone throughout the session. Emphasize conceptual clarity and step-by-step problem solving. Use the teaching style of a real classroom teacher who interacts actively with students.after connectingwith a student compulsarily greet him and ask him about what he want to study in mathematics""")
-        #agents.JobContext.connect(self)
+        agents.JobContext.connect(self)
         #self.session.generate_reply(instructions="Greet the student and ask him about what he want to study.")
+     session = AgentSession(
+                                                                llm=google.beta.realtime.RealtimeModel(
+                                                                                model="gemini-2.0-flash-exp",
+                                                                                                voice="Puck",
+                                                                                                                temperature=0.8,
+                                                                                                                                instructions="You are a helpful assistant"
+                                                                                                                                            ))
+
+
+
+      session.start(
+                                                                                                                                                                room=ctx.room,
+                                                                                                                                                                            agent=srikantji(),
+                #         room_input_options=RoomInputOptions(
+            # LiveKit Cloud enhanced noise cancellation
+            # - If self-hosting, omit this parameter
+            # - For telephony applications, use `BVCTelephony` for best results
+         #   noise_cancellation=noise_cancellation.BVC(), 
+      #  ),
+    )
+ #   await ctx.connect()
+     session.generate_reply(
+                                 instructions="Greet the user and offer your assistance."
+    )
 class anitaji(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are anita sharma, a dedicated sanskrit teacher living in Tunga, Bassi. You teach Class 10 students at MGGGS Tunga, following the Rajasthan Board of Secondary Education (RBSE) curriculum.
